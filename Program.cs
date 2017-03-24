@@ -8,9 +8,9 @@ namespace UnicamFattoriale
         {
             try
             {
+                //Stampo dei messaggi di cortesia per l'utente, così lo guido all'utilizzo del programma
+                Console.WriteLine("Questo programma calcola il fattoriale di un numero");
                 while(true){
-                    //Stampo dei messaggi di cortesia per l'utente, così lo guido all'utilizzo del programma
-                    Console.WriteLine("Questo programma calcola il fattoriale di un numero");
                     Console.Write("Digita un numero intero e premi invio: ");
 
                     //Console.ReadLine si mette in attesa che l'utente digiti qualcosa e prema invio.
@@ -23,11 +23,17 @@ namespace UnicamFattoriale
                     int numero = int.Parse(testoDigitatoDallUtente);
                     Console.WriteLine($"{numero}");
                     //Calcolo il fattoriale: qui ci sono degli errori!
-                    int risultato = 1;
+                    double risultato = 1;
                     int n = numero;
+                    // questo if è facoltativo perchè ho notato che il fattoriale di 20 è un numero grande.
+                    if(n>20){
+                        Console.WriteLine("Spiacente, non posso calcolare il fattoriale per questo valore.");
+                        Console.ReadKey();
+                    }
                     while (n > 0) {
                         risultato *= n;
                         n--;
+                        Console.WriteLine($"{risultato}");
                     }
 
                     //Stampo il risultato
